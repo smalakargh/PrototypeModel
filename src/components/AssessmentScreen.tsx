@@ -273,7 +273,7 @@ const AssessmentScreen: React.FC = () => {
         <Card className="w-full max-w-2xl p-8 backdrop-blur-xl bg-white/15 border border-white/30 rounded-2xl shadow-2xl">
           <div className="text-center">
             <Spinner size="lg" color="primary" className="mx-auto mb-6 animate-pulse-glow" />
-            <h2 className="text-3xl font-bold text-white mb-4 bg-gradient-to-r from-primary-100 to-secondary-100 bg-clip-text text-transparent">
+            <h2 className="text-3xl font-bold text-white mb-4 bg-gradient-to-r from-primary-100 to-secondary-100 bg-clip-text">
               AI is Generating Questions
             </h2>
             <p className="text-white/90 mb-6 text-lg">
@@ -414,7 +414,7 @@ const AssessmentScreen: React.FC = () => {
                       size="sm"
                       color={difficulty === 'easy' ? 'success' : difficulty === 'medium' ? 'warning' : 'danger'}
                       variant="flat"
-                      className="font-medium"
+                      className="font-medium bg-white"
                     >
                       {difficulty.charAt(0).toUpperCase() + difficulty.slice(1)}
                     </Chip>
@@ -498,21 +498,21 @@ const AssessmentScreen: React.FC = () => {
           <div>
             <h2 className="text-2xl font-bold text-white mb-2">AI-Powered Assessment</h2>
             <div className="flex items-center space-x-2 mt-1">
-              <Chip size="sm" color="primary" variant="flat" className="bg-gradient-to-r from-primary-500/20 to-primary-600/20 border-primary-400/40">
+              <Chip size="sm" color="primary" variant="flat" className="bg-gradient-to-r from-primary-500/20 to-primary-600/20 text-gray-300 border-primary-400/40">
                 {currentQ.category.charAt(0).toUpperCase() + currentQ.category.slice(1)}
               </Chip>
               <Chip 
                 size="sm" 
                 color={currentQ.difficulty === 'easy' ? 'success' : currentQ.difficulty === 'medium' ? 'warning' : 'danger'} 
                 variant="flat"
-                className={`${currentQ.difficulty === 'easy' ? 'bg-gradient-to-r from-success-500/20 to-success-600/20 border-success-400/40' : 
-                           currentQ.difficulty === 'medium' ? 'bg-gradient-to-r from-warning-500/20 to-warning-600/20 border-warning-400/40' : 
-                           'bg-gradient-to-r from-danger-500/20 to-danger-600/20 border-danger-400/40'}`}
+                className={`${currentQ.difficulty === 'easy' ? 'bg-gradient-to-r from-success-500/20 to-success-600/20 text-gray-300 border-success-400/40' : 
+                           currentQ.difficulty === 'medium' ? 'bg-gradient-to-r from-warning-500/20 to-warning-600/20 text-gray-300 border-warning-400/40' : 
+                           'bg-gradient-to-r from-danger-500/20 to-danger-600/20 text-gray-300 border-danger-400/40'}`}
               >
                 {currentQ.difficulty.charAt(0).toUpperCase() + currentQ.difficulty.slice(1)}
               </Chip>
               {currentQ.aiGenerated && (
-                <Chip size="sm" color="secondary" variant="flat" className="bg-gradient-to-r from-secondary-500/20 to-secondary-600/20 border-secondary-400/40">
+                <Chip size="sm" color="secondary" variant="flat" className="bg-gradient-to-r from-secondary-500/20 to-secondary-600/20 text-gray-300 border-secondary-400/40">
                   AI Generated
                 </Chip>
               )}
@@ -573,7 +573,7 @@ const AssessmentScreen: React.FC = () => {
                     <span className={`text-base leading-relaxed ${
                       answers[currentQuestion] === index
                         ? 'text-blue-800 font-semibold'
-                        : 'text-gray-700'
+                        : 'text-white'
                     }`}>
                       {option}
                     </span>
