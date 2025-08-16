@@ -6,6 +6,7 @@ import vitePluginInjectDataLocator from "./plugins/vite-plugin-inject-data-locat
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [react(), vitePluginInjectDataLocator(), tailwindcss()],
+  base: '/',
   server: {
     allowedHosts: true,
     port: 3000,
