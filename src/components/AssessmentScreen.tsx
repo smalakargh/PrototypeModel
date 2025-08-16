@@ -414,7 +414,7 @@ const AssessmentScreen: React.FC = () => {
                       size="sm"
                       color={difficulty === 'easy' ? 'success' : difficulty === 'medium' ? 'warning' : 'danger'}
                       variant="flat"
-                      className="font-medium bg-white"
+                      className="font-medium bg-gray-800 text-white hover:bg-gray-700"
                     >
                       {difficulty.charAt(0).toUpperCase() + difficulty.slice(1)}
                     </Chip>
@@ -549,11 +549,11 @@ const AssessmentScreen: React.FC = () => {
             >
               {currentQ.options.map((option, index) => (
                 <div
-                  key={option.id}
+                  key={index}
                   className={`p-4 rounded-lg border-2 cursor-pointer transition-all duration-300 w-full ${
                     answers[currentQuestion] === index
                       ? 'border-blue-600 bg-blue-100 shadow-lg scale-[1.02] ring-2 ring-blue-200'
-                      : 'border-gray-300 hover:border-blue-400 hover:bg-gray-50'
+                      : 'border-gray-300 hover:border-blue-400 hover:bg-gray-800/30'
                   }`}
                   onClick={() => handleAnswerSelect(index.toString())}
                 >
